@@ -14,6 +14,7 @@ import re
 from bs4 import BeautifulSoup
 
 #url = "https://www.javbus.com/"
+#url = "https://www.javbus.info/"
 url = "https://www.javbus.us/"
 
 # proxy default config
