@@ -10,7 +10,7 @@ Find magnetlink and download cover image via javID
 ## Installation
 
 ```bash
-$ git clone https://github.com/qwqmeow/JavSearch
+$ git clone https://github.com/qwqmeow/JavSearchEVO
 $ cd JavSearch
 $ pip install -r requirments.txt
 $ python search.py
@@ -107,9 +107,4 @@ $ tree
 - 封面和例图会放在运行目录(不是脚本的存放目录)下的library目录中
 
 ## Todo
-- magnet链接转换为种子，下载到对应目录中
-
-## telegram bot
-- bot @kerker233_bot
-- /randomcar 随机发车
-- /jav javID 查询番号的封面和磁链
+- none
