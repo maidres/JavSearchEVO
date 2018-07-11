@@ -2,7 +2,9 @@
 # coding: utf-8
 
 """
-@author: OrangeMeoww
+@oringin author: OrangeMeoww
+@modified by : maidres
+version 0.1
 """
 import argparse
 import sys
@@ -11,8 +13,8 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-url = "https://www.javbus.com/"
-
+#url = "https://www.javbus.com/"
+url = "https://www.javbus.us/"
 
 # proxy default config
 proxy = {
@@ -23,7 +25,8 @@ proxy = {
 
 def download_image_over_socks5(img_src):
 
-    ir = requests.get(img_src, proxies=proxy)
+    #ir = requests.get(img_src, proxies=proxy)
+    ir = requests.get(img_src)
     if ir.status_code == 200:
         open(img_src.split(".")[-2].split("/")[-1] +
              os.path.splitext(img_src)[1], 'wb').write(ir.content)
@@ -34,7 +37,8 @@ def download_image(avcode):
 
     s = requests.Session()
 
-    r = s.get(url + avcode, proxies=proxy)
+    #r = s.get(url + avcode, proxies=proxy)
+    r = s.get(url + avcode)
     gidd = re.findall(r'[\d]{10,11}', r.text)
     gid = str(gidd[0])
     # gid 10-11
@@ -90,8 +94,10 @@ def get_av_magnet(avcode):
         'lang': 'zh'
     }
 
+#    r2 = s.get("http://www.javbus.com/ajax/uncledatoolsbyajax.php",
+#               params=params, proxies=proxy, headers=Referer)
     r2 = s.get("http://www.javbus.com/ajax/uncledatoolsbyajax.php",
-               params=params, proxies=proxy, headers=Referer)
+               params=params, headers=Referer)
     soup = BeautifulSoup(r2.content.decode('utf-8', 'ignore'), 'html.parser')
 
     trs = soup.findAll('tr', attrs={"height": "35px"})
