@@ -10,7 +10,7 @@ Find magnetlink and download cover image via javID
 ## Installation
 
 ```bash
-$ git clone https://github.com/qwqmeow/JavSearchEVO
+$ git clone https://github.com/maidres/JavSearchEVO
 $ cd JavSearch
 $ pip install -r requirments.txt
 $ python search.py
@@ -27,8 +27,8 @@ usage: search.py [-h] [-i ID] [-p PROXY]
 Find magnetlink and download cover image via javID
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -i ID, --id ID        avcode you want to download
+  -h, --help                 show this help message and exit
+  -i ID, --id ID             avcode you want to download
   -p PROXY, --proxy PROXY    set your own HTTP/socks5
 
 ```
@@ -102,9 +102,9 @@ $ tree
 
 
 ## Notes
-- 运行需要代理：目前滋滋 HTTP/SOCKS5 代理请自备
-- 默认代理是socks5：127.0.0.1:1080
+
 - 封面和例图会放在运行目录(不是脚本的存放目录)下的library目录中
 
 ## Todo
-- none
+- 根据参数判断是否需要代理
+- 默认代理是socks5：127.0.0.1:1080
